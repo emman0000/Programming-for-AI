@@ -1,15 +1,16 @@
-def employee(name, salary):
-    if salary == 0:  # Correct condition to check if salary is 0
-        salary = 10000
-    tax = salary * 0.02
-    salary_after_tax = salary - tax
-    print(f"Employee Name: {name}")
-    print(f"Salary after tax: {salary_after_tax}")
 
-# Get inputs from the user
-n = input("Enter the name of the employee: ")
-s = float(input("Enter the salary of the employee: "))
-
-# Call the function
-employee(n, s)
+#task 3 
+def convert_URL():
+    user_url=input("Enter a URL link that starts with 'https://www.' = ")
+    
+    link = user_url.split("https://www.")
+    if len(link)>1:
+     user_url = link.pop()
+     converted_url = user_url + ".com"
+     return converted_url
+    else:
+       return "Invalid URL link!"
+       
+result = convert_URL()
+print("Converted URL: "+result)
 
