@@ -1,21 +1,21 @@
-def save_employee_biodata(file_path):
+def save_employee_biodata():
   try:
       # Taking data from the user
       name = input("Enter the employee's name: ")
-      cnic = input("Enter the employee's CNIC number: ")
+      cn = input("Enter the employee's cn number: ")
       age = input("Enter the employee's age: ")
       salary = input("Enter the employee's salary: ")
-
-      # check is age and salary is a number 
+     
+ # check is age and salary is a number
       if not age.isdigit():
           raise ValueError("Age must be a number.")
       if not salary.replace('.', '', 1).isdigit():
           raise ValueError("Salary must be a numeric value.")
 
-      # Prepare biodata string
-      biodata = f"Name: {name}\nCNIC: {cnic}\nAge: {age}\nSalary: {salary}\n"
 
-      # Write biodata to the file
+      biodata = f"Name: {name}\n cn: {cn}\nAge: {age}\nSalary: {salary}\n"
+
+
       with open(file_path, 'w', encoding='utf-8') as file:
           file.write(biodata)
 
@@ -28,8 +28,9 @@ def save_employee_biodata(file_path):
   except Exception as e:
       print(f"An unexpected error occurred: {e}")
 
-def append_contact_number(file_path):
+def append_contact_number():
   try:
+
       # Taking contact number input from the user
       contact_number = input("Enter the employee's contact number: ")
 
@@ -50,9 +51,9 @@ def append_contact_number(file_path):
   except Exception as e:
       print(f"An unexpected error occurred: {e}")
 
-def read_file(file_path):
+def read_file():
   try:
-      # Read the contents of the file
+
       with open(file_path, 'r', encoding='utf-8') as file:
           content = file.read()
           print("\nFile Content:")
@@ -63,15 +64,8 @@ def read_file(file_path):
   except Exception as e:
       print(f"An unexpected error occurred: {e}")
 
-# Example usage:
+# Adding data to the file :
 file_path = 'employee_biodata.txt'
-
-# Save employee biodata
-save_employee_biodata(file_path)
-
-# Append contact number
-append_contact_number(file_path)
-
-# Read and display the file content
-read_file(file_path)
-
+save_employee_biodata()
+append_contact_number()
+read_file()
