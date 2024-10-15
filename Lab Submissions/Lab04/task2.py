@@ -1,8 +1,9 @@
-a = ["He","th","i","sal"]
-b = ["llo","is","s","man"]
+a = ["Hello"," take"]
+b = ["Dear"," Sir"]
 
 result = []
-for i in range(len(a)):
-    result.append(a[i]+b[i])
+for i in a:
+    for j in b:
+        result.append(i+j)
   
 print(result)
