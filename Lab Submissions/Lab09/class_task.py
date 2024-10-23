@@ -16,10 +16,10 @@ plt.show()
 # Plot 2: Bar graph of the number of different species
 species_counts = df['Species'].value_counts()
 plt.figure(figsize=(10, 6))
-plt.bar(species_counts.index, species_counts.values, color='skyblue')
+plt.bar(species_counts.index, species_counts.values, color='aqua')
 plt.title('Number of Different Species', fontsize=24)
-plt.xlabel('Species', fontsize=16)
-plt.ylabel('Count', fontsize=16)
+plt.xlabel('Species', fontsize=18)
+plt.ylabel('Count', fontsize=18)
 plt.xticks(rotation=45)
 plt.show()
 
@@ -29,8 +29,8 @@ for species in df['Species'].unique():
     subset = df[df['Species'] == species]
     plt.scatter(subset['Species'], subset['PetalWidthCm'], label=species)
 
-plt.title('Species vs Petal Width', fontsize=24)
+plt.title('Species vs Petal Width', fontsize=28)
 plt.xlabel('Species', fontsize=16)
-plt.ylabel('Petal Width (cm)', fontsize=16)
+plt.ylabel('Petal Width (cm)', fontsize=14)
 plt.legend(title='Species')
 plt.show()
